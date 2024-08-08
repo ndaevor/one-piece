@@ -1,0 +1,501 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Basic Styles */
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    /* background-color: #FFCE00;  */
+    background-color: black;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #000000; 
+    color: #fff;
+    padding: 1rem 1.5rem; /* Adjusted padding to provide space for the menu toggle */
+    height: 100px;
+    position: relative; /* To position the menu toggle button absolutely */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+}
+
+header .logo img {
+    height: 50px; 
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: #1c3d72; /* Dark blue for button */
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem; /* Increased padding for a better button size */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    position: absolute; /* Positioned absolutely within the header */
+    top: 1rem;
+    right: 1rem;
+    z-index: 20; /* Ensure it is above other elements */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: auto;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #ffd700; /* Gold color for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ff6347; /* Tomato color for hover */
+}
+header nav ul li a.active {
+    color: #ff6347;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header nav ul {
+        display: none; /* Hide navigation links initially */
+        position: fixed; /* Fixed position to ensure it slides from the right */
+        top: 0;
+        right: 0;
+        height: 100vh; /* Full viewport height */
+        width: 250px; /* Width of the menu */
+        background: rgba(0, 0, 0, 0.9); /* Black with slight transparency */
+        backdrop-filter: blur(5px); /* Blurs the content behind the menu */
+        box-shadow: -2px 0 5px rgba(0,0,0,0.3); /* Shadow on the left edge */
+        transform: translateX(100%); /* Initially off-screen */
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+        z-index: 15; /* Ensure it is above the banner but below the toggle button */
+        padding-top: 60px; /* Space for the toggle button */
+    }
+    
+    header nav ul.active {
+        display: block; /* Ensure it’s visible */
+        transform: translateX(0); /* Slide into view */
+    }
+
+    header nav ul li {
+        margin: 1rem 0;
+        text-align: center; /* Center text in mobile view */
+    }
+    header nav ul li a {
+        color: #ffd700; /* Gold color for links */
+        text-decoration: none;
+        font-weight: bold;
+        display: block; /* Make links full-width for better touch targets */
+        padding: 1rem; /* Add padding for touch area */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    }
+
+    header nav ul li a:hover {
+        background-color: red; 
+        color: #fff; 
+    }
+
+    header .logo {
+        margin-bottom: 1rem;
+    }
+
+    #banner {
+        height: 40vh;
+    }
+
+    #banner h1 {
+        font-size: 2rem;
+    }
+
+    #banner p {
+        font-size: 1rem;
+    }
+
+    #enquiry-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 90%; /* Adjust width to be responsive */
+        max-width: 500px; /* Ensure it doesn’t exceed this width */
+        margin-bottom: 1rem; /* Space between form and image */
+    }
+
+    .form-image {
+        display: none; /* Hide image on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 0.3rem 0;
+    }
+
+    #banner h1 {
+        font-size: 1.5rem;
+    }
+
+    #banner p {
+        font-size: 0.8rem;
+    }
+
+    .form-container {
+        width: 95%; /* Slightly larger width on very small screens */
+    }
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #ffffff; /* White background for sections */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Banner */
+#banner {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    height: 60vh;
+    background: url('images/home/chibi-luffy-one-3840x2160-13063.png') no-repeat center center/cover; /* Background image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+#banner h1, #banner p {
+    position: relative;
+    z-index: 1;
+}
+
+#banner h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+#banner p {
+    font-size: 1.5rem;
+}
+
+/* Sections */
+ #latest-news{
+    /* background-image: url(images/ship.jpg); */
+     background-color: rgb(285, 285, 285,0.4); 
+    
+
+} 
+
+  #enquiry-form {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+#latest-news h2, #enquiry-form h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #1c3d72; /* Dark blue for headings */
+}
+
+/* Latest News Section */
+/* Latest News Section */
+#latest-news {
+    
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #f9f9f9; /* Light gray background for contrast */
+}
+
+.news-article {
+    max-height: 300px; /* Standard height for the preview */
+    overflow: hidden; /* Hide overflow content */
+    text-align: left;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.news-preview {
+    margin-bottom: 0.3rem;
+}
+
+.news-full {
+    display: none; /* Hide the full news content by default */
+    margin-top: 1rem;
+}
+
+.read-more-btn {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.75rem 1.5rem; /* Increased padding for better touch targets */
+    background: #1c3d72; /* Dark blue for button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #ff6347; /* Tomato color for hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .news-article {
+        max-height: none; /* Allow the article to expand fully on mobile */
+    }
+
+    .news-full {
+        display: block; /* Show full content on mobile */
+    }
+
+    .read-more-btn {
+        padding: 0.75rem 1.25rem; /* Adjust padding for smaller screens */
+        font-size: 0.875rem; /* Slightly smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .read-more-btn {
+        padding: 0.5rem 1rem; /* Adjust padding for very small screens */
+        font-size: 0.75rem; /* Further reduce font size */
+    }
+}
+
+
+
+/* Form */
+#enquiry-form {
+    /* background-color:   #60BFF5; */
+    background-image: url(images/home/ship.jpg);
+    /* background-color: #000000; */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+    justify-content: center; /* Center form elements */
+}
+
+.form-container {
+        
+    width: 60%; /* Default width for larger screens */
+    max-width: 500px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    
+
+}
+
+.form-image {
+    display: block; /* Show image on larger screens */
+    width: 20%; /* Adjust width as needed */
+    max-width: 300px;
+    display: flex;
+    position: absolute;
+    right: 1rem;
+}
+
+.form-image img {
+    width: 200px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+form button {
+    background: #60BFF5; /* Dark blue for button */
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background: #ff6347; /* Tomato color for hover */
+}
+
+/* Footer */
+footer {
+    background: #1c3d72; /* Dark blue for footer */
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer div {
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin: 0.5rem 0;
+}
+
+footer ul li a {
+    color: #ffd700; /* Gold color for links */
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #ff6347; /* Tomato color for hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show menu toggle button on mobile */
+    }
+    header nav {
+        flex-direction: column;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        margin-left: 0;
+        z-index: 10;
+    }
+    
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    header .logo {
+        margin-bottom: 1rem;
+    }
+
+    #banner {
+        height: 40vh;
+    }
+
+    #banner h1 {
+        font-size: 2rem;
+    }
+
+    #banner p {
+        font-size: 1rem;
+    }
+
+    #enquiry-form {
+        flex-direction: column; /* Stack form and image vertically */
+        align-items: center;
+    }
+
+    .form-container {
+        width: 90%; /* Adjust width to be responsive */
+        max-width: none; /* Remove max-width for better responsiveness */
+    }
+
+    .form-image {
+        display: none; /* Hide image on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 0.3rem 0;
+    }
+
+    #banner h1 {
+        font-size: 1.5rem;
+    }
+
+    #banner p {
+        font-size: 0.8rem;
+    }
+
+    .form-container {
+        width: 95%; /* Slightly larger width on very small screens */
+    }
+}

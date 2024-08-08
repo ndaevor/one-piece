@@ -1,0 +1,118 @@
+/* Basic Styles */
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    background-color: #FFCE00; 
+    color: #333;
+}
+
+/* Main Section */
+#episodes {
+    padding: 2rem;
+}
+
+#episodes h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Episode Row */
+.episode-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.episode-row a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Episode Card */
+.episode-card {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.episode-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Episode Image */
+.episode-image {
+    margin: auto;
+    width: 200px; /* Adjust width to your preference */
+    height: 100%; /* Adjust height to maintain aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+/* Episode Info */
+.episode-info {
+    padding: 1rem;
+    flex: 1; /* Takes the remaining space */
+}
+
+.episode-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.episode-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+/* Expand Button */
+#expand-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background:  #1c3d72;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#expand-button:hover {
+    background: tomato;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .episode-card {
+        flex-direction: column;
+    }
+    
+    .episode-image {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .episode-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .episode-info p {
+        font-size: 0.8rem;
+    }
+}
