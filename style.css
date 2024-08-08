@@ -34,7 +34,7 @@ header .logo {
 }
 
 header .logo img {
-    height: 50px; 
+    height: 75px; 
     width: 170px;
 }
 
@@ -202,8 +202,8 @@ section {
     text-align: center;
     color: #fff;
     height: 60vh;
-    background-color: white;
-    /* background: url('images/home/chibi-luffy-one-3840x2160-13063.png') no-repeat center center/cover; Background image */
+    /* background-color: white; */
+    background: url('images/home/index.avif') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -454,7 +454,7 @@ footer ul li a:hover {
     }
     
     header .logo {
-        height: 50px; 
+        height: 75px; 
         width: 170px;
         margin-bottom: 1rem;
     }

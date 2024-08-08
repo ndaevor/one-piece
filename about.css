@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/aboutzoro.jpg'); /* Replace with your poster image */
+    background-image: url('images/aboutzoro.avif'); /* Replace with your poster image */
     background-size: cover;
     background-position: center;
     filter: brightness(50%); /* Optional: darken the background image */

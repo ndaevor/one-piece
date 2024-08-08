@@ -103,8 +103,15 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .character-card {
-        max-width: 100%; /* Full width on smaller screens */
+        width: 300px;
+        height: 580px; /* Full width on smaller screens */
     }
+    .character-card img{
+        width: 300px;
+        height: 490px; /* Full width on smaller screens */
+    }
+
+
     
     .see-more-button {
         width: 100%;

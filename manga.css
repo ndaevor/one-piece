@@ -46,10 +46,10 @@ body {
 }
 
 /* Manga Image */
-.manga-image {
+.manga-row img {
     margin: auto;
-    width: 200px; /* Adjust width to your preference */
-    height: 100%; /* Adjust height to maintain aspect ratio */
+    width: 220px; /* Adjust width to your preference */
+    height: 150px; /* Adjust height to maintain aspect ratio */
     object-fit: cover; /* Maintain aspect ratio and cover the area */
 }
 
@@ -99,9 +99,9 @@ body {
         flex-direction: column;
     }
     
-    .manga-image {
-        width: 100%; /* Full width on smaller screens */
-        height: auto; /* Maintain aspect ratio */
+    .manga-row img {
+        width: 320px; /* Adjust width to your preference */
+        height: 120px; /* Adjust height to maintain aspect ratio */
     }
 }
 
