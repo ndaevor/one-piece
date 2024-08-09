@@ -1,0 +1,116 @@
+/* Basic Styles */
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    background-color: #FFCE00; 
+    color: #333;
+}
+
+/* Main Section */
+#manga {
+    padding: 2rem;
+}
+
+#manga h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Manga Row */
+.manga-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.manga-row a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Manga Card */
+.manga-card {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.manga-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Manga Image */
+.manga-row img {
+    margin: auto;
+    width: 220px; /* Adjust width to your preference */
+    height: 150px; /* Adjust height to maintain aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+/* Manga Info */
+.manga-info {
+    padding: 1rem;
+    flex: 1; /* Takes the remaining space */
+}
+
+.manga-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.manga-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+/* Expand Button */
+#expand-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1c3d72;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#expand-button:hover {
+    background-color: tomato;
+}
+
+/* Hidden Chapters */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .manga-card {
+        flex-direction: column;
+    }
+    
+    .manga-row img {
+        width: 320px; /* Adjust width to your preference */
+        height: 120px; /* Adjust height to maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .manga-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .manga-info p {
+        font-size: 0.8rem;
+    }
+}
