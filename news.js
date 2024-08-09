@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const readMoreBtn = document.querySelector('.read-more-btn');
-    const newsFull = document.querySelector('.news-full');
-    const newsArticle = document.querySelector('.news-article');
-
-    if (newsFull) {
-        readMoreBtn.addEventListener('click', function() {
-            if (newsFull.style.display === 'none' || !newsFull.style.display) {
-                newsFull.style.display = 'block'; // Show the full news content
-                readMoreBtn.textContent = 'Read Less'; // Change button text
-                newsArticle.style.maxHeight = 'none'; // Remove the height restriction
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const newsArticle = this.closest('.news-article');
+            const newsFull = newsArticle.querySelector('.news-full');
+            const newsPreview = newsArticle.querySelector('.news-preview');
+            
+            if (newsFull.style.display === 'block') {
+                newsFull.style.display = 'none';
+                newsPreview.style.display = 'block';
+                this.textContent = 'Read More';
             } else {
-                newsFull.style.display = 'none'; // Hide the full news content
-                readMoreBtn.textContent = 'Read More'; // Change button text
-                newsArticle.style.maxHeight = '300px'; // Reset the height
+                newsFull.style.display = 'block';
+                newsPreview.style.display = 'none';
+                this.textContent = 'Read Less';
             }
         });
-    }
+    });
 });

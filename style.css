@@ -5,16 +5,23 @@
     box-sizing: border-box;
 }
 html {
+    margin: 0;
+    height: 100%;
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 /* Basic Styles */
 body {
+    margin: 0;
+    height: 100%;
     font-family: 'Trebuchet MS', sans-serif;
     line-height: 1.6;
     /* background-color: #FFCE00;  */
     background-color: black;
     color: #333;
+}
+main{
+    flex: 1;
 }
 
 /* Header */
@@ -265,7 +272,7 @@ section {
 }
 
 .news-article {
-    max-height: 300px; /* Standard height for the preview */
+    height: fit-content; /* Standard height for the preview */
     overflow: hidden; /* Hide overflow content */
     text-align: left;
     position: relative;
@@ -280,14 +287,18 @@ section {
 
 .news-full {
     display: none; /* Hide the full news content by default */
-    margin-top: 1rem;
 }
+
+.news-preview {
+    display: block; /* Show preview by default */
+}
+
 
 .read-more-btn {
     display: block;
     margin: 1rem auto 0;
-    padding: 0.75rem 1.5rem; /* Increased padding for better touch targets */
-    background: #1c3d72; /* Dark blue for button */
+    padding: 0.75rem 1.5rem;
+    background: #1c3d72;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -298,18 +309,19 @@ section {
 }
 
 .read-more-btn:hover {
-    background: #ff6347; /* Tomato color for hover */
+    background: #ff6347;
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .news-article {
         max-height: none; /* Allow the article to expand fully on mobile */
+        margin-bottom: 0%;
     }
 
     .news-full {
-        display: block; /* Show full content on mobile */
+        display: none; /* Show full content on mobile */
     }
+    
 
     .read-more-btn {
         padding: 0.75rem 1.25rem; /* Adjust padding for smaller screens */
@@ -323,6 +335,7 @@ section {
         font-size: 0.75rem; /* Further reduce font size */
     }
 }
+
 
 
 
@@ -411,6 +424,8 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 footer div {
